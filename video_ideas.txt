@@ -1,0 +1,73 @@
+# Video ideas — one per line
+# Lines starting with # are comments and will be skipped
+# Lines starting with DONE: have already been processed
+
+# Batch 1 – abstract motion graphics
+DONE: Endless tunnel of geometric rings flying toward the viewer → EndlessTunnelRings
+DONE: Aurora borealis curtains of light slowly rippling → AuroraBorealis
+DONE: DNA double helix slowly rotating in space → DnaHelix
+DONE: Exploding firework bursts made of glowing particles → FireworkBurst
+DONE: Neon geometric kaleidoscope rotating and morphing → NeonKaleidoscope
+DONE: Grid of cubes breathing in and out with a wave pulse → GridCubesWave
+
+# Batch 2 – Tier 1: Abstract Geometric (highest volume)
+Glowing cyan hexagonal grid with slow ripple pulse wave
+Spinning torus knot made of neon light strands rotating in dark space
+Infinite wireframe tunnel flying forward through dark corridor
+Concentric polygon rings rotating at different speeds with color glow
+Crystalline geometric lattice slowly assembling and dissolving
+Cascading neon light bars sliding vertically like digital rain
+Floating translucent glass cubes drifting with parallax depth
+Rotating icosahedron wireframe with glowing vertices
+Gold geometric low-poly mesh surface undulating slowly
+Minimal thin white lines weaving and crossing on pure black background
+
+# Batch 3 – Tier 1: Gradient and Color Flow Backgrounds
+Iridescent liquid chrome surface with slow rippling rainbow reflections
+Deep purple and cyan aurora mesh gradient blobs softly drifting
+Warm coral and orange sunset gradient slowly rotating across frame
+Neon magenta and electric blue color orbs bleeding into each other
+Soft pastel watercolor blobs dissolving and re-forming on dark canvas
+Molten gold lava lamp blobs slowly rising and merging
+Dark teal and violet gradient tide slowly sweeping left to right
+
+# Batch 4 – Tier 1: Tech / HUD / Cyber Overlays
+Circular radar sweep with glowing green blips appearing on dark background
+Matrix-style columns of falling cyan code characters on black
+PCB circuit board traces progressively lighting up with electric pulses
+Holographic perspective grid floor stretching to horizon with scan lines
+World map with pulsing neon connection lines between cities
+Futuristic HUD targeting reticle with rotating corner brackets and data readout
+Digital fingerprint scan animation with glowing neon overlay and pulse ring
+Glitch interference effect with RGB channel split and static noise
+Scrolling binary code columns with glowing neon highlight streaks
+Satellite orbital paths circling globe wireframe in dark space
+
+# Batch 5 – Tier 2: Particle and Organic Motion
+Golden dust particles slowly raining downward with soft bokeh blur
+Blue particle nebula cloud swirling slowly like a galaxy
+Warm orange ember particles rising upward with gentle drift
+Confetti explosion of colorful geometric shapes bursting from center
+Silver snowflakes drifting diagonally with wind variation and depth
+Firefly warm lights floating upward and fading in pitch black
+Underwater translucent bubbles rising with wobble and size variation
+Glittering diamond dust particles orbiting a central light source
+Cosmic stardust stream sweeping across frame in slow arc
+
+# Batch 6 – Tier 2: Premium Abstract and 3D-Style
+Magnetic field lines flowing and bending around invisible dark sphere
+Neon lightning bolts branching and flickering across black background
+Starfield warp speed acceleration with light streaks rushing toward viewer
+Fractal tree branches growing outward with bioluminescent glow
+Quantum wave interference rings spreading from multiple collision points
+Radial kaleidoscope mirror pattern rotating with vivid gradient colors
+Crystal prism slowly rotating while refracting rainbow light bands
+Isometric neon city grid slowly rising from flat dark plane
+Liquid mercury silver surface slowly rippling and morphing
+
+# Batch 7 – Tier 2: Data Visualization
+Animated neon bar chart with glowing bars growing from baseline
+Financial line graph drawing itself left to right with glowing tip
+Circular donut chart with segments filling in sequence with bright colors
+Large digital counter ticking upward to milestone number with glow
+Neon pie chart slices rotating into position with particle burst

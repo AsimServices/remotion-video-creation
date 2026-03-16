@@ -1,0 +1,32 @@
+{
+  "name": "remotion_claude_ai",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx remotion studio src/index.ts",
+    "render": "npx remotion render src/index.ts F16MissionMap out/f16-mission.mp4",
+    "render:ai": "npx remotion render src/index.ts AIAutomation out/ai-automation.mp4",
+    "render:particles": "npx remotion render src/index.ts ParticleNetwork out/particle-network.mp4",
+    "render:honeycomb": "npx remotion render src/index.ts HoneycombRipple out/honeycomb-ripple.mp4",
+    "render:concentric": "npx remotion render src/index.ts ConcentricCircles out/concentric-circles.mp4",
+    "render:ocean": "npx remotion render src/index.ts OceanWaveDots out/ocean-wave-dots.mp4",
+    "render:parallax": "npx remotion render src/index.ts ParallaxCircles out/parallax-circles.mp4",
+    "render:weaving": "npx remotion render src/index.ts WeavingLines out/weaving-lines.mp4",
+    "render:blobs": "npx remotion render src/index.ts ColorBlobs out/color-blobs.mp4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@remotion/cli": "^4.0.435",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.435"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  }
+}

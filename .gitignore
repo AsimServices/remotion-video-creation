@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Generated Output
+out/
+*.mp4
+
+# Source Code as requested
+src/
+
+public/
+
+# Python caches and logs
+__pycache__/
+*.pyc
+generate_videos.log
+test_cf.py
+
+# Roadmap
+STOCK_VIDEO_ROADMAP.md
+stop_video_roadmap.md
