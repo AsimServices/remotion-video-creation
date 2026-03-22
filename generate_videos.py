@@ -27,6 +27,9 @@ from pathlib import Path
 from datetime import datetime
 
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
 
@@ -39,8 +42,9 @@ LOG_FILE    = SCRIPT_DIR / "generate_videos.log"
 
 # ─── LLM Config ───────────────────────────────────────────────────────────────
 
-API_URL   = "https://llm-chat-app-template.asimservices-pay.workers.dev/api/chat" # ⚠️ CHANGE THIS TO YOUR CLOUDFLARE WORKER URL
-LLM_MODEL = "@cf/qwen/qwen2.5-coder-32b-instruct" # Model is hardcoded in the worker, but keeping for reference
+API_URL   = "https://api.anthropic.com/v1/messages"
+LLM_MODEL = "claude-sonnet-4-6"
+ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
 
 SYSTEM_PROMPT = textwrap.dedent("""\
 You are an expert Remotion (React + TypeScript) animation developer.
@@ -60,11 +64,25 @@ STRICT RULES — follow every one of them:
    - Fade in during the first 50 frames.
    - Fade out during the last 50 frames.
    - Be 600 frames (20 s at 30 fps) long — but do NOT hardcode 600, use `durationInFrames` from `useVideoConfig()`.
-   - Run at 1920×1080 — use `width` and `height` from `useVideoConfig()`.
+   - Run at 3840×2160 (4K UHD) — use `width` and `height` from `useVideoConfig()`.
    - Be purely generative — no external assets or images.
 9. Use a dark background (near black).
 10. The animation should be visually rich, dynamic, and premium-looking.
 11. Use `useCurrentFrame()` and `useVideoConfig()` for all timing — never Date.now() or setInterval.
+12. NEVER use Math.random() anywhere inside the component function. Remotion renders each frame
+    multiple times and Math.random() makes output non-deterministic, causing a render timeout crash.
+    Instead, pre-compute all "random" values as a constant array OUTSIDE the component using a
+    deterministic formula, e.g.:
+      const ITEMS = Array.from({ length: 100 }, (_, i) => ({
+        x: (i * 1731) % 1920,
+        y: (i * 1337) % 1080,
+        size: (i % 10) + 2,
+      }));
+    This must be declared at module level, not inside the component.
+13. Do NOT use CSS transitions or CSS animations (transition:, animation:, @keyframes).
+    All animation must be driven by useCurrentFrame() and interpolate() only.
+14. Do NOT use useEffect, useState, useRef, or any React hooks other than useCurrentFrame()
+    and useVideoConfig(). The component must be a pure function of the current frame.
 
 Return ONLY the TSX source code. The very first line must be: import React from 'react';
 """)
@@ -128,54 +146,43 @@ def component_name_to_output(name: str) -> Path:
 # ─── LLM call ────────────────────────────────────────────────────────────────
 
 def call_llm(idea: str, retries: int = 3) -> str:
-    """Call the local LLM and return the generated TSX code string."""
+    """Call the Anthropic LLM API and return the generated TSX code string."""
     payload = {
+        "model": LLM_MODEL,
+        "max_tokens": 8192,
+        "system": SYSTEM_PROMPT,
         "messages": [
-            { "role": "system", "content": SYSTEM_PROMPT },
             { "role": "user", "content": f"Generate a Remotion TSX animation component for the following concept:\n\n{idea}\n\nRemember: output ONLY raw TSX code, first line must be: import React from 'react';" }
         ]
+    }
+
+    headers = {
+        "x-api-key": ANTHROPIC_API_KEY,
+        "anthropic-version": "2023-06-01",
+        "content-type": "application/json"
     }
 
     for attempt in range(1, retries + 1):
         try:
             log(f"  [LLM] Calling API (attempt {attempt}/{retries})…")
-            
-            # We explicitly serialize json to avoid parsing issues at Cloudflare Worker
-            headers = {"Content-Type": "application/json"}
-            resp = requests.post(API_URL, data=json.dumps(payload), headers=headers, timeout=120, stream=True)
+            resp = requests.post(API_URL, data=json.dumps(payload), headers=headers, timeout=120)
             resp.raise_for_status()
             
-            text_parts = []
+            data = resp.json()
             
-            # Manually parse the SSE stream
-            for line in resp.iter_lines():
-                if line:
-                    decoded_line = line.decode('utf-8')
-                    if decoded_line.startswith('data: '):
-                        data_str = decoded_line[6:].strip()
-                        if data_str == '[DONE]':
-                            break
-                        try:
-                            chunk = json.loads(data_str)
-                            # Cloudflare Workers AI returns the delta in the `response` field
-                            if "response" in chunk:
-                                text_parts.append(str(chunk["response"]))
-                            # Or OpenAI compatible format:
-                            elif "choices" in chunk and len(chunk["choices"]) > 0:
-                                delta = chunk["choices"][0].get("delta", {})
-                                if "content" in delta:
-                                    text_parts.append(str(delta["content"]))
-                        except json.JSONDecodeError:
-                            continue
+            text_parts = []
+            for block in data.get("content", []):
+                if block.get("type") == "text":
+                    text_parts.append(block.get("text", ""))
 
             text = "".join(text_parts).strip()
 
             if not text:
-                log("  [LLM] Empty response from stream. Ensure your Worker URL is correct.", "WARN")
+                log("  [LLM] Empty response from Anthropic API.", "WARN")
                 if attempt < retries:
                     time.sleep(3)
                     continue
-                raise ValueError("Could not extract text from LLM response stream")
+                raise ValueError("Could not extract text from LLM response")
 
             return text
 
@@ -239,8 +246,8 @@ def patch_root_tsx(component_name: str):
         component={{{component_name}}}
         durationInFrames={{600}}
         fps={{30}}
-        width={{1920}}
-        height={{1080}}
+        width={{3840}}
+        height={{2160}}
       />""")
 
     changed = False
@@ -281,6 +288,7 @@ def render_video(component_name: str, output_path: Path) -> bool:
         "src/index.ts",
         component_name,
         str(output_path),
+        "--gl=angle",   # GPU-accelerated Chromium rendering via ANGLE (NVIDIA on Windows)
     ]
     env = {**os.environ, "CI": "true"}
 
@@ -351,6 +359,23 @@ def process_idea(idea: str, dry_run: bool = False) -> tuple[bool, str]:
     # ── 3. Write component file ───────────────────────────────────────────────
     tsx_path.write_text(code, encoding="utf-8")
     log(f"  [File] Written → {tsx_path}")
+
+    # ── 3b. Syntax-check with esbuild (fast, same tool the bundler uses) ──────
+    check = subprocess.run(
+        ["npx", "esbuild", "--bundle=false", str(tsx_path)],
+        cwd=str(SCRIPT_DIR),
+        capture_output=True,
+        text=True,
+        shell=sys.platform.startswith('win'),
+    )
+    if check.returncode != 0:
+        log(f"  [Syntax] FAILED — generated code has syntax errors:", "ERROR")
+        for line in check.stderr.strip().splitlines()[:10]:
+            log(f"    {line}", "ERROR")
+        log(f"  [Syntax] Removing broken file to protect the build.", "ERROR")
+        tsx_path.unlink(missing_ok=True)
+        return False, component_name
+    log(f"  [Syntax] ✓ Syntax OK")
 
     # ── 4. Patch Root.tsx ─────────────────────────────────────────────────────
     patch_root_tsx(component_name)
