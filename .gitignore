@@ -13,3 +13,13 @@ out/
 # OS
 .DS_Store
 Thumbs.db
+
+# Animation components
+src/*
+!src/index.ts
+!src/Root.tsx
+
+# Excluded project files
+video_ideas.txt
+STOCK_VIDEO_ROADMAP.md
+render_4k.py
