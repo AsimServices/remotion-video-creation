@@ -2,17 +2,26 @@
 """
 generate_videos.py
 ──────────────────
-Reads video ideas from video_ideas.txt, calls the local LLM API to generate
-a Remotion TSX component for each idea, registers it in src/Root.tsx, and
-renders the video to out/<name>.mp4.
+Reads video ideas from video_ideas.txt, calls an LLM to generate a Remotion
+TSX component for each idea, registers it in src/Root.tsx, and renders the
+video to out/<name>.mp4.
+
+LLM strategy (two-tier):
+  PRIMARY  — Local LLM via LM Studio / Ollama at http://localhost:1234
+             (free, no API cost, OpenAI-compatible endpoint)
+  BACKUP   — Claude (Anthropic API) using your ANTHROPIC_API_KEY from .env
+             Kicks in automatically when the local LLM is unavailable or fails.
+             Claude Code can also act as direct orchestrator when invoked here.
 
 Usage:
   python generate_videos.py                  # process all pending ideas
   python generate_videos.py --dry-run        # print what would be done, no API calls
   python generate_videos.py --idea "Spiral"  # process a single idea inline
+  python generate_videos.py --llm local      # force local LLM only
+  python generate_videos.py --llm claude     # force Claude (Anthropic) only
 
-Local LLM endpoint: http://localhost:1234/api/v1/chat
-Model:              deepseek-coder-v2-lite-instruct
+Rendering:
+  GPU (ANGLE/NVIDIA) is tried first. If unavailable, falls back to CPU (SwiftShader).
 """
 
 import argparse
@@ -42,9 +51,14 @@ LOG_FILE    = SCRIPT_DIR / "generate_videos.log"
 
 # ─── LLM Config ───────────────────────────────────────────────────────────────
 
-API_URL   = "https://api.anthropic.com/v1/messages"
-LLM_MODEL = "claude-sonnet-4-6"
-ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
+# Primary: local LLM (LM Studio / Ollama — OpenAI-compatible, free)
+LOCAL_API_URL = os.environ.get("LOCAL_API_URL", "http://localhost:1234/v1/chat/completions")
+LOCAL_MODEL   = os.environ.get("LOCAL_MODEL",   "deepseek-coder-v2-lite-instruct")
+
+# Backup: Claude via Anthropic API (orchestrator / fallback)
+ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages"
+ANTHROPIC_MODEL   = os.environ.get("LLM_MODEL", "claude-sonnet-4-6")
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
 SYSTEM_PROMPT = textwrap.dedent("""\
 You are an expert Remotion (React + TypeScript) animation developer.
@@ -143,57 +157,103 @@ def component_name_to_output(name: str) -> Path:
     kebab = re.sub(r"(?<!^)(?=[A-Z])", "-", name).lower()
     return OUT_DIR / f"{kebab}.mp4"
 
-# ─── LLM call ────────────────────────────────────────────────────────────────
+# ─── LLM calls ───────────────────────────────────────────────────────────────
 
-def call_llm(idea: str, retries: int = 3) -> str:
-    """Call the Anthropic LLM API and return the generated TSX code string."""
+USER_PROMPT = (
+    "Generate a Remotion TSX animation component for the following concept:\n\n"
+    "{idea}\n\n"
+    "Remember: output ONLY raw TSX code, first line must be: import React from 'react';"
+)
+
+
+def call_local_llm(idea: str, retries: int = 2) -> str:
+    """Call the local LLM (LM Studio / Ollama) — primary, free, no API cost."""
     payload = {
-        "model": LLM_MODEL,
+        "model": LOCAL_MODEL,
+        "max_tokens": 8192,
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user",   "content": USER_PROMPT.format(idea=idea)},
+        ],
+    }
+    for attempt in range(1, retries + 1):
+        try:
+            log(f"  [LOCAL] Calling local LLM (attempt {attempt}/{retries})…")
+            resp = requests.post(LOCAL_API_URL, json=payload, timeout=120)
+            resp.raise_for_status()
+            text = resp.json()["choices"][0]["message"]["content"].strip()
+            if not text:
+                raise ValueError("Empty response from local LLM")
+            log(f"  [LOCAL] ✓ Got response ({len(text)} chars)")
+            return text
+        except Exception as e:
+            log(f"  [LOCAL] Attempt {attempt} failed: {e}", "WARN")
+            if attempt < retries:
+                time.sleep(3)
+    raise RuntimeError("Local LLM unavailable or failed after all retries")
+
+
+def call_claude(idea: str, retries: int = 3) -> str:
+    """Call Claude via Anthropic API — backup / orchestrator fallback."""
+    if not ANTHROPIC_API_KEY:
+        raise RuntimeError("ANTHROPIC_API_KEY not set — cannot use Claude as backup")
+
+    payload = {
+        "model": ANTHROPIC_MODEL,
         "max_tokens": 8192,
         "system": SYSTEM_PROMPT,
         "messages": [
-            { "role": "user", "content": f"Generate a Remotion TSX animation component for the following concept:\n\n{idea}\n\nRemember: output ONLY raw TSX code, first line must be: import React from 'react';" }
-        ]
+            {"role": "user", "content": USER_PROMPT.format(idea=idea)},
+        ],
     }
-
     headers = {
         "x-api-key": ANTHROPIC_API_KEY,
         "anthropic-version": "2023-06-01",
-        "content-type": "application/json"
+        "content-type": "application/json",
     }
-
     for attempt in range(1, retries + 1):
         try:
-            log(f"  [LLM] Calling API (attempt {attempt}/{retries})…")
-            resp = requests.post(API_URL, data=json.dumps(payload), headers=headers, timeout=120)
+            log(f"  [CLAUDE] Calling Anthropic API (attempt {attempt}/{retries})…")
+            resp = requests.post(ANTHROPIC_API_URL, json=payload, headers=headers, timeout=120)
             resp.raise_for_status()
-            
-            data = resp.json()
-            
-            text_parts = []
-            for block in data.get("content", []):
-                if block.get("type") == "text":
-                    text_parts.append(block.get("text", ""))
-
-            text = "".join(text_parts).strip()
-
+            text = "".join(
+                b.get("text", "") for b in resp.json().get("content", [])
+                if b.get("type") == "text"
+            ).strip()
             if not text:
-                log("  [LLM] Empty response from Anthropic API.", "WARN")
-                if attempt < retries:
-                    time.sleep(3)
-                    continue
-                raise ValueError("Could not extract text from LLM response")
-
+                raise ValueError("Empty response from Claude")
+            log(f"  [CLAUDE] ✓ Got response ({len(text)} chars)")
             return text
-
         except requests.RequestException as e:
-            log(f"  [LLM] Request error: {e}", "WARN")
+            log(f"  [CLAUDE] Attempt {attempt} failed: {e}", "WARN")
             if attempt < retries:
                 time.sleep(5)
             else:
                 raise
+    raise RuntimeError("Claude API failed after all retries")
 
-    raise RuntimeError("All LLM retries exhausted")
+
+def call_llm(idea: str, force: str = "auto") -> str:
+    """
+    Smart LLM dispatcher.
+      force="auto"   → try local first, fall back to Claude automatically
+      force="local"  → local only (fail hard if unavailable)
+      force="claude" → Claude only (skip local)
+    """
+    if force == "claude":
+        log("  [LLM] Forced to Claude (Anthropic).")
+        return call_claude(idea)
+
+    if force == "local":
+        log("  [LLM] Forced to local LLM.")
+        return call_local_llm(idea)
+
+    # auto: try local → fall back to Claude
+    try:
+        return call_local_llm(idea)
+    except Exception as local_err:
+        log(f"  [LLM] Local LLM failed ({local_err}). Falling back to Claude (Anthropic)…", "WARN")
+        return call_claude(idea)
 
 # ─── Code extraction ──────────────────────────────────────────────────────────
 
@@ -278,40 +338,55 @@ def patch_root_tsx(component_name: str):
 
 # ─── Renderer ────────────────────────────────────────────────────────────────
 
-def render_video(component_name: str, output_path: Path) -> bool:
-    """Run the Remotion render command. Returns True on success."""
-    out_dir = output_path.parent
-    out_dir.mkdir(parents=True, exist_ok=True)
+# Rendering backends tried in order.
+# angle     = GPU-accelerated via ANGLE (NVIDIA / AMD on Windows & Linux)
+# swiftshader = software CPU renderer — works on any machine, no GPU needed
+GL_BACKENDS = ["angle", "swiftshader"]
 
-    cmd = [
-        "npx", "remotion", "render",
-        "src/index.ts",
-        component_name,
-        str(output_path),
-        "--gl=angle",   # GPU-accelerated Chromium rendering via ANGLE (NVIDIA on Windows)
-    ]
+
+def render_video(component_name: str, output_path: Path) -> bool:
+    """
+    Run the Remotion render command.
+    Tries GPU (ANGLE) first; automatically falls back to CPU (SwiftShader)
+    if the GPU backend fails — so this works on machines without NVIDIA.
+    Returns True on success.
+    """
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     env = {**os.environ, "CI": "true"}
 
-    log(f"  [Render] Running: {' '.join(cmd)}")
-    result = subprocess.run(
-        cmd,
-        cwd=str(SCRIPT_DIR),
-        env=env,
-        capture_output=False,   # stream output to terminal
-        shell=sys.platform.startswith('win')
-    )
+    for i, gl in enumerate(GL_BACKENDS):
+        if i > 0:
+            log(f"  [Render] GPU render failed. Retrying with CPU fallback (--gl={gl})…", "WARN")
 
-    if result.returncode == 0:
-        size_mb = output_path.stat().st_size / (1024 * 1024)
-        log(f"  [Render] ✓ Done → {output_path.name} ({size_mb:.1f} MB)")
-        return True
-    else:
-        log(f"  [Render] ✗ Render failed (exit code {result.returncode})", "ERROR")
-        return False
+        cmd = [
+            "npx", "remotion", "render",
+            "src/index.ts",
+            component_name,
+            str(output_path),
+            f"--gl={gl}",
+        ]
+        log(f"  [Render] Running: {' '.join(cmd)}")
+        result = subprocess.run(
+            cmd,
+            cwd=str(SCRIPT_DIR),
+            env=env,
+            capture_output=False,
+            shell=sys.platform.startswith("win"),
+        )
+
+        if result.returncode == 0:
+            size_mb = output_path.stat().st_size / (1024 * 1024)
+            log(f"  [Render] ✓ Done → {output_path.name} ({size_mb:.1f} MB) [backend: {gl}]")
+            return True
+
+        log(f"  [Render] Backend '{gl}' failed (exit {result.returncode}).", "WARN")
+
+    log("  [Render] ✗ All render backends failed.", "ERROR")
+    return False
 
 # ─── Single pipeline step ────────────────────────────────────────────────────
 
-def process_idea(idea: str, dry_run: bool = False) -> tuple[bool, str]:
+def process_idea(idea: str, dry_run: bool = False, llm: str = "auto") -> tuple[bool, str]:
     """
     Full pipeline for one idea.
     Returns (success, component_name).
@@ -335,7 +410,7 @@ def process_idea(idea: str, dry_run: bool = False) -> tuple[bool, str]:
 
     # ── 1. Call LLM ──────────────────────────────────────────────────────────
     try:
-        raw_response = call_llm(idea)
+        raw_response = call_llm(idea, force=llm)
     except Exception as e:
         log(f"  [LLM] FAILED: {e}", "ERROR")
         return False, component_name
@@ -389,19 +464,31 @@ def process_idea(idea: str, dry_run: bool = False) -> tuple[bool, str]:
 def main():
     parser = argparse.ArgumentParser(description="Generate Remotion videos from a text file of ideas.")
     parser.add_argument("--dry-run", action="store_true", help="Parse ideas but skip API and render.")
-    parser.add_argument("--idea", type=str, default=None, help="Process a single inline idea string.")
+    parser.add_argument("--idea",  type=str, default=None, help="Process a single inline idea string.")
     parser.add_argument("--limit", type=int, default=None, help="Max number of ideas to process this run.")
+    parser.add_argument(
+        "--llm",
+        choices=["auto", "local", "claude"],
+        default="auto",
+        help=(
+            "LLM backend to use. "
+            "'auto' (default) tries local first, falls back to Claude. "
+            "'local' forces local LLM only. "
+            "'claude' forces Claude (Anthropic API) only."
+        ),
+    )
     args = parser.parse_args()
 
     log("=" * 60)
     log("  generate_videos.py — Remotion Video Automation")
-    log(f"  API  : {API_URL}")
-    log(f"  Model: {LLM_MODEL}")
+    log(f"  LLM mode  : {args.llm}")
+    log(f"  Local LLM : {LOCAL_API_URL}  ({LOCAL_MODEL})")
+    log(f"  Claude    : {ANTHROPIC_API_URL}  ({ANTHROPIC_MODEL})  [backup / orchestrator]")
+    log(f"  Rendering : GPU (ANGLE) → CPU (SwiftShader) fallback")
     log("=" * 60)
 
     if args.idea:
-        # One-off inline idea
-        success, name = process_idea(args.idea, dry_run=args.dry_run)
+        success, name = process_idea(args.idea, dry_run=args.dry_run, llm=args.llm)
         sys.exit(0 if success else 1)
 
     # Batch mode: read from file
@@ -421,7 +508,7 @@ def main():
 
     for n, (line_idx, idea) in enumerate(pending, 1):
         log(f"\n[{n}/{total}] Processing…")
-        success, comp_name = process_idea(idea, dry_run=args.dry_run)
+        success, comp_name = process_idea(idea, dry_run=args.dry_run, llm=args.llm)
 
         if not args.dry_run:
             if success:
