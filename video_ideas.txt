@@ -1,73 +1,592 @@
 # Video ideas — one per line
 # Lines starting with # are comments and will be skipped
 # Lines starting with DONE: have already been processed
+# Theme: Global Network Animations — city/continent connections, business expansion, supply chains
 
-# Batch 1 – abstract motion graphics
-DONE: Endless tunnel of geometric rings flying toward the viewer → EndlessTunnelRings
-DONE: Aurora borealis curtains of light slowly rippling → AuroraBorealis
-DONE: DNA double helix slowly rotating in space → DnaHelix
-DONE: Exploding firework bursts made of glowing particles → FireworkBurst
-DONE: Neon geometric kaleidoscope rotating and morphing → NeonKaleidoscope
-DONE: Grid of cubes breathing in and out with a wave pulse → GridCubesWave
 
-# Batch 2 – Tier 1: Abstract Geometric (highest volume)
-Glowing cyan hexagonal grid with slow ripple pulse wave
-Spinning torus knot made of neon light strands rotating in dark space
-Infinite wireframe tunnel flying forward through dark corridor
-Concentric polygon rings rotating at different speeds with color glow
-Crystalline geometric lattice slowly assembling and dissolving
-Cascading neon light bars sliding vertically like digital rain
-Floating translucent glass cubes drifting with parallax depth
-Rotating icosahedron wireframe with glowing vertices
-Gold geometric low-poly mesh surface undulating slowly
-Minimal thin white lines weaving and crossing on pure black background
+FAILED: Ultra dark world map with razor-thin white connection lines and microscopic glowing city nodes
+FAILED: Chrome metallic globe with mirror-finish arcs connecting gleaming city node spheres in space
+FAILED: Deep navy world network with gold animated pulse routes and soft glowing halos on city nodes
+FAILED: Aerial cinematic world map pull-back revealing full global network of glowing cyan connections
 
-# Batch 3 – Tier 1: Gradient and Color Flow Backgrounds
-Iridescent liquid chrome surface with slow rippling rainbow reflections
-Deep purple and cyan aurora mesh gradient blobs softly drifting
-Warm coral and orange sunset gradient slowly rotating across frame
-Neon magenta and electric blue color orbs bleeding into each other
-Soft pastel watercolor blobs dissolving and re-forming on dark canvas
-Molten gold lava lamp blobs slowly rising and merging
-Dark teal and violet gradient tide slowly sweeping left to right
+# ─────────────────────────────────────────────────────────────────────────────
+# Theme: GPS / Route Tracing — Moving Dots, Vehicles, Logistics and Shipping
+# ─────────────────────────────────────────────────────────────────────────────
 
-# Batch 4 – Tier 1: Tech / HUD / Cyber Overlays
-Circular radar sweep with glowing green blips appearing on dark background
-Matrix-style columns of falling cyan code characters on black
-PCB circuit board traces progressively lighting up with electric pulses
-Holographic perspective grid floor stretching to horizon with scan lines
-World map with pulsing neon connection lines between cities
-Futuristic HUD targeting reticle with rotating corner brackets and data readout
-Digital fingerprint scan animation with glowing neon overlay and pulse ring
-Glitch interference effect with RGB channel split and static noise
-Scrolling binary code columns with glowing neon highlight streaks
-Satellite orbital paths circling globe wireframe in dark space
+# Batch 11 – GPS Route Drawing and Navigation
+FAILED: Glowing neon GPS route line drawing itself across dark city grid with animated dot moving along path
+FAILED: Electric blue navigation path tracing through dark road network with pulsing position marker
+FAILED: Cyan GPS breadcrumb trail animating across dark map with soft glow and directional arrow
+FAILED: Animated turn-by-turn route reveal on dark street grid with glowing waypoint markers
+FAILED: Neon route line progressively drawing from origin to destination on minimal dark road map
 
-# Batch 5 – Tier 2: Particle and Organic Motion
-Golden dust particles slowly raining downward with soft bokeh blur
-Blue particle nebula cloud swirling slowly like a galaxy
-Warm orange ember particles rising upward with gentle drift
-Confetti explosion of colorful geometric shapes bursting from center
-Silver snowflakes drifting diagonally with wind variation and depth
-Firefly warm lights floating upward and fading in pitch black
-Underwater translucent bubbles rising with wobble and size variation
-Glittering diamond dust particles orbiting a central light source
-Cosmic stardust stream sweeping across frame in slow arc
+# Batch 12 – Delivery Vehicle Tracking
+FAILED: Glowing delivery truck icon moving along neon route across dark city map with trail effect
+FAILED: Animated last-mile delivery paths with multiple glowing vehicle dots radiating from depot
+FAILED: Electric orange courier vehicles tracing routes simultaneously across urban dark grid map
+FAILED: Neon package delivery animation with vehicle dot leaving warehouse and arriving at destination
+FAILED: Fleet of glowing vehicles spreading outward from distribution center across dark road network
 
-# Batch 6 – Tier 2: Premium Abstract and 3D-Style
-Magnetic field lines flowing and bending around invisible dark sphere
-Neon lightning bolts branching and flickering across black background
-Starfield warp speed acceleration with light streaks rushing toward viewer
-Fractal tree branches growing outward with bioluminescent glow
-Quantum wave interference rings spreading from multiple collision points
-Radial kaleidoscope mirror pattern rotating with vivid gradient colors
-Crystal prism slowly rotating while refracting rainbow light bands
-Isometric neon city grid slowly rising from flat dark plane
-Liquid mercury silver surface slowly rippling and morphing
+# Batch 13 – Shipping and Freight Logistics
+FAILED: Container ship icon glowing in cyan tracing ocean shipping lane from port to port on dark map
+FAILED: Animated cargo plane route with neon contrail arc drawing between departure and arrival cities
+FAILED: Glowing freight train path animating along rail network across dark continental map
+FAILED: Multi-modal logistics route animation showing cargo transferring from ship to truck to destination
+FAILED: Orange and blue intermodal shipping route with animated cargo dot switching transport modes
 
-# Batch 7 – Tier 2: Data Visualization
-Animated neon bar chart with glowing bars growing from baseline
-Financial line graph drawing itself left to right with glowing tip
-Circular donut chart with segments filling in sequence with bright colors
-Large digital counter ticking upward to milestone number with glow
-Neon pie chart slices rotating into position with particle burst
+# Batch 14 – Real-Time Fleet Management
+FAILED: Multiple colored vehicle dots moving simultaneously along separate glowing routes on dark map
+FAILED: Logistics dispatch animation with vehicles branching outward from single hub on dark grid
+FAILED: Real-time delivery network with pulsing ETA rings expanding from each moving vehicle dot
+FAILED: Neon fleet tracker with color-coded vehicle types racing along optimized routes on dark map
+FAILED: Warehouse to doorstep animation with glowing route chain and animated package handoff dots
+
+# Batch 15 – Supply Chain Journey Visualization
+FAILED: Raw material to factory to store journey traced as glowing animated path across world map
+FAILED: End-to-end supply chain route animation from mine to manufacturer to retailer on dark map
+FAILED: Cold chain logistics animation with ice-blue glowing route from farm to supermarket on map
+FAILED: Pharmaceutical supply chain glowing path from lab to distribution center to pharmacy on map
+FAILED: Automotive parts supply chain animated flow from supplier factories to assembly plant on map
+
+# Batch 16 – Air Cargo and Aviation Routes
+FAILED: Glowing airplane icon tracing great circle arc route across dark globe with neon contrail
+FAILED: Air cargo hub and spoke network with planes radiating outward from central airport node
+FAILED: Neon aviation route map with animated flight paths crisscrossing dark world map at night
+FAILED: Red-eye cargo flight routes glowing in gold across dark Pacific and Atlantic on world map
+FAILED: International air freight animation with multiple glowing aircraft following curved globe arcs
+
+# Batch 17 – Urban Mobility and City Logistics
+FAILED: Neon city grid with glowing taxi and rideshare vehicles tracing routes across dark urban map
+FAILED: Electric blue metro and subway route animation with animated trains on dark city transit map
+FAILED: Smart city delivery network with autonomous vehicle dots navigating glowing street grid
+FAILED: Bike courier network animation with cyan dots weaving through dark urban road grid
+FAILED: Urban freight consolidation animation with vehicles converging on city center delivery zones
+
+# Batch 18 – Maritime and Port Operations
+FAILED: Animated port operations map with glowing container ships queuing and docking in sequence
+FAILED: Ocean freight animation with neon vessel tracks crisscrossing dark Pacific shipping lanes
+FAILED: Slow-moving cargo ship dots with glowing wake trails crossing dark ocean on world map
+FAILED: Port-to-port shipping animation with vessel speed shown by trail length on dark ocean map
+FAILED: Neon maritime chokepoints animation showing ship traffic flowing through straits on dark map
+
+# Batch 19 – E-Commerce and Parcel Tracking
+FAILED: Order fulfillment animation with glowing parcel dot traveling from warehouse to front door
+FAILED: E-commerce last-mile delivery network with cyan package dots fanning out across city grid
+FAILED: Same-day delivery race animation with neon vehicle speeding along optimized dark city route
+FAILED: Returns logistics animation with glowing reverse route from customer back to warehouse
+FAILED: Parcel sorting hub animation with packages flowing in and routing outward in colored streams
+
+# Batch 20 – Cinematic and Premium Route Finishes
+FAILED: Cinematic drone-view GPS trace glowing in gold across dark photorealistic city grid at night
+FAILED: Ultra-minimal single glowing line route drawing slowly across pure black map with pulse dot
+FAILED: Luxury brand delivery animation with rose gold vehicle tracing elegant route on dark map
+FAILED: Neon holographic 3D city route animation with elevated highway paths glowing above grid
+FAILED: Time-lapse style route animation where entire day of deliveries draws on dark map in sequence
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Theme: Data Point Pulses — Markers Growing or Flashing on Maps, Sales and Market Share
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Batch 21 – Pulsing Map Markers and Pins
+FAILED: Glowing cyan location pins dropping onto dark world map one by one with ripple pulse rings
+FAILED: Neon market presence dots expanding outward from city centers across dark regional map
+FAILED: Electric gold sales markers flashing and growing on dark USA map showing revenue hotspots
+FAILED: Animated heat pins lighting up sequentially across Europe map with soft radial glow pulses
+FAILED: Corporate blue data point markers breathing and pulsing on dark global market map
+
+# Batch 22 – Sales Territory and Market Share
+FAILED: Glowing sales territory boundaries expanding outward from origin city on dark country map
+FAILED: Neon market share circles growing proportionally across dark world map by region size
+FAILED: Color-coded sales zone animation with territories lighting up in sequence on dark map
+FAILED: Electric orange regional sales dominance animation with zones filling and brightening
+FAILED: Gold and cyan competing market share circles growing and overlapping on dark world map
+
+# Batch 23 – Revenue and Performance Hotspots
+FAILED: Bright revenue hotspot markers exploding outward with particle bursts on dark city map
+FAILED: Top performing sales city markers glowing brighter as revenue data increases on dark map
+FAILED: Neon performance pulse rings radiating from high-value market locations on dark world map
+FAILED: Animated revenue concentration map with dot sizes scaling to sales volume on dark background
+
+
+# Batch 25 – Real-Time Data Streaming on Maps
+FAILED: Live sales data animation with markers randomly flashing across world map in real time style
+
+
+# Batch 36 – Globe with Data Overlays
+DONE: Spinning Earth with real-time style data arcs shooting between cities on dark background → SpinningEarthArcs
+FAILED: Corporate globe with animated financial flow lines orbiting surface between finance hubs
+FAILED: Dark rotating Earth with satellite orbital rings circling and pulsing around globe equator
+FAILED: Globe rotation with animated trade volume heat rings glowing brighter over busiest regions
+FAILED: Spinning Earth with layered ring of neon data orbiting equator showing global metrics
+
+# Batch 37 – Multi-Globe and Split Compositions
+FAILED: Twin globe comparison animation showing old world and new world markets on dark background
+FAILED: Four-quadrant globe animation each zoomed into different continent region simultaneously
+FAILED: Before and after globe animation showing sparse then dense network presence on dark background
+FAILED: Split globe animation with left half showing infrastructure right half showing data flow
+FAILED: Sequential globe zoom series pulling into each continent one after another on dark background
+
+# Batch 38 – Industry-Specific Globe Narratives
+FAILED: Energy sector dark globe with glowing pipeline and power grid lines across continents
+FAILED: Telecommunications globe with satellite beam arcs covering continents from orbital nodes
+FAILED: Financial services globe with gold transaction flow lines connecting banking capitals
+FAILED: Pharmaceutical globe with supply chain routes glowing between manufacturing and distribution hubs
+FAILED: Technology company globe with data center nodes pulsing and connecting across dark Earth
+
+# Batch 39 – Atmospheric and Cinematic Globe Styles
+FAILED: Earth globe rising slowly from darkness below with city lights glowing on night side
+FAILED: Dramatic globe rotation with volumetric light rays breaking over horizon on dark space
+FAILED: Slow majestic Earth spin seen from high orbit with thin blue atmosphere line glowing
+FAILED: Corporate reveal globe emerging from black void with rim light and neon grid materializing
+FAILED: Cinematic pull-back from city level rising through atmosphere to reveal full spinning Earth
+
+# Batch 40 – Abstract and Stylized Globe Finishes
+FAILED: Particle globe where continents are formed by thousands of tiny glowing dots on dark background
+FAILED: Geometric low-poly Earth sphere rotating with flat-shaded continent faces glowing in gold
+FAILED: Neon grid globe with only latitude and longitude lines glowing on perfectly black background
+FAILED: Dissolving globe animation where continents fragment into particles then reassemble while spinning
+FAILED: Glitch globe animation with digital distortion effects revealing clean spinning Earth underneath
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Theme: Infographic Overlays — Charts and Bars Rising on Maps, Financial Reports and Stats
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Batch 41 – Bar Charts Rising on Maps
+FAILED: Neon blue 3D bars rising from city locations on dark world map showing GDP by country
+FAILED: Gold vertical bar columns growing from US state positions on dark map showing revenue data
+FAILED: Electric cyan bars erupting upward from European capitals on dark map with glow pulse base
+FAILED: Corporate animated bars rising from Asian city nodes on dark regional map by market size
+FAILED: Glowing isometric bar chart columns growing from continent surfaces on dark spinning globe
+
+# Batch 42 – Financial Data Map Overlays
+FAILED: Dark world map with neon green stock market performance bars rising from financial capitals
+FAILED: Gold financial district bars growing upward from Wall Street London and Tokyo on dark map
+FAILED: Animated GDP growth bars rising from country centers with brightness scaling to performance
+FAILED: Neon currency exchange rate bars pulsing up and down from global banking cities on dark map
+FAILED: Corporate earnings bar overlay with glowing columns rising from headquarters city on dark map
+
+# Batch 43 – Sales and Revenue Charts on Maps
+FAILED: Animated regional revenue bars growing from sales territory centers on dark national map
+FAILED: Neon orange sales performance columns rising from top city markets on dark USA map
+FAILED: Quarterly revenue growth bars animating upward from retail hub cities on dark world map
+FAILED: Gold sales leaderboard bars rising from top performing country markets on dark global map
+FAILED: Electric white revenue comparison bars growing side by side from city pairs on dark map
+
+# Batch 44 – Market Share Infographic Animations
+FAILED: Animated pie chart slices expanding outward from country centers on dark world map
+FAILED: Neon donut charts growing from regional capitals showing local market share on dark map
+FAILED: Color-coded market split bars rising simultaneously from competing city markets on dark map
+FAILED: Glowing proportional circle charts inflating from continent centers on dark global map
+FAILED: Corporate market dominance animation with stacked bars growing from territory hubs on dark map
+
+# Batch 45 – Population and Demographics Overlays
+FAILED: Glowing population density bars rising from city centers scaled to inhabitants on dark world map
+FAILED: Animated demographic pyramid bars growing from country positions on dark regional map
+FAILED: Neon urban growth bars pulsing upward from megacity locations on dark global map
+FAILED: Electric blue age distribution chart columns rising from continent zones on dark background
+FAILED: Gold birth rate and growth bars animating from country centers on dark world map
+
+# Batch 46 – Economic Indicator Animations
+FAILED: Dark world map with animated inflation rate bars rising from national capitals in red and gold
+FAILED: Neon unemployment rate columns pulsing from country centers on dark European map
+FAILED: Trade balance surplus and deficit bars growing above and below map line on dark world map
+FAILED: Foreign investment flow bars rising from destination countries on dark global map in cyan
+FAILED: Economic freedom index bars growing from country locations with color gradient on dark map
+
+# Batch 47 – Corporate KPI Dashboard Maps
+FAILED: Animated KPI bar overlay with performance columns rising from office locations on dark map
+FAILED: Corporate scorecard animation with color-coded metric bars growing from regional hubs on map
+FAILED: Dark map with neon target vs actual bar pairs rising from each business territory center
+FAILED: Sales funnel bars animating from lead generation cities to closed deal cities on dark map
+FAILED: Executive dashboard animation with multiple KPI bars rising simultaneously across dark map
+
+# Batch 48 – Stock Market and Investment Maps
+FAILED: Neon stock market index bars pulsing from exchange city locations on dark world map
+FAILED: Animated portfolio performance bars growing from investment destination countries on dark map
+FAILED: Dark map with gold commodity price bars rising from production country centers globally
+FAILED: Real estate price index bars animating upward from major property markets on dark map
+FAILED: Venture capital investment bars growing from startup hub cities on dark world map in cyan
+
+# Batch 49 – Animated Stat Counters on Maps
+FAILED: Glowing number counters ticking upward above city markers on dark world map simultaneously
+FAILED: Animated percentage stat bubbles inflating from country centers on dark global map
+FAILED: Neon metric labels flashing and updating above regional markers on dark continental map
+FAILED: Corporate stat reveal animation with numbers spinning into position above map city nodes
+FAILED: Gold revenue figures counting up above top market cities on dark world map in sequence
+
+# Batch 50 – Cinematic Infographic Finishes
+FAILED: Cinematic camera push into dark world map as bar charts rise dramatically from all continents
+FAILED: Luxury gold infographic overlay animation with elegant bars rising on ultra dark map surface
+FAILED: Dramatic reveal animation where dark map illuminates and bar charts rise in synchronized wave
+FAILED: Premium corporate infographic globe with 3D bars rising from rotating Earth surface in gold
+FAILED: Final summary infographic animation with all chart types appearing simultaneously on dark map
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Theme: Flight Paths — Airplane Icons Following Routes, Travel Business and Trade Flows
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Batch 51 – Single Flight Path Animations
+FAILED: Glowing airplane icon tracing neon arc route from New York to London on dark world map
+FAILED: Electric cyan aircraft following curved great circle path across dark Pacific ocean map
+FAILED: Gold airplane icon leaving glowing contrail arc as it crosses dark Atlantic on world map
+FAILED: Minimal white airplane dot tracing razor-thin route line across pure black world map
+FAILED: Neon blue aircraft icon animating along dotted flight path between two city markers on dark map
+
+# Batch 52 – Hub and Spoke Flight Networks
+FAILED: Major airline hub animation with glowing planes radiating outward from central airport node
+FAILED: International hub airport with neon flight paths fanning out to all continents on dark map
+FAILED: Star-pattern flight network animation with aircraft streaming from single hub on dark world map
+FAILED: Connecting flights animation with glowing plane icons hopping through hub cities on dark map
+FAILED: Airline alliance network with color-coded aircraft routes spreading from multiple hub airports
+
+# Batch 53 – Intercontinental and Long-Haul Routes
+FAILED: Ultra long-haul flight path animation with slow glowing aircraft crossing dark world map
+FAILED: Transpacific route animation with neon airplane arc curving across dark ocean to Asia
+FAILED: Polar route flight animation with aircraft taking shortest path over Arctic on dark globe
+FAILED: Sydney to London ultra long-haul glowing flight arc across dark southern hemisphere map
+FAILED: Multiple intercontinental routes animating simultaneously with trailing glow on dark world map
+
+# Batch 54 – Business Aviation and Corporate Travel
+FAILED: Corporate jet route animation with gold airplane icon tracing executive travel path on dark map
+FAILED: Business class travel flow animation with premium aircraft routes connecting finance capitals
+FAILED: Private aviation network animation with sleek plane icons on thin neon routes on dark map
+FAILED: Executive roadshow flight animation with corporate jet hopping between investor city meetings
+FAILED: Luxury charter flight paths glowing in rose gold between elite destination cities on dark map
+
+# Batch 55 – Air Cargo and Freight Aviation
+FAILED: Cargo aircraft animation with neon orange freighter icon tracing overnight route on dark map
+FAILED: FedEx UPS style air cargo hub network with freight planes radiating from Memphis on dark map
+FAILED: Air freight trade flow animation with cargo planes streaming between manufacturing and consumer nations
+FAILED: Express delivery aircraft route animation with glowing plane racing along neon path on dark map
+FAILED: International air cargo network with multiple freighter icons crossing dark world map simultaneously
+
+# Batch 56 – Seasonal and Tourism Travel Flows
+FAILED: Summer holiday flight paths animation with planes streaming from Europe to Mediterranean on dark map
+FAILED: Winter sun escape routes with glowing aircraft flowing from cold to warm destinations on dark map
+FAILED: Ski season travel animation with neon flight paths converging on Alpine airport nodes on dark map
+FAILED: Christmas holiday travel surge animation with dense flight paths lighting up dark national map
+FAILED: Festival and event travel animation with aircraft converging on destination city from all directions
+
+# Batch 57 – Trade and Commerce Air Routes
+FAILED: Silk Road air trade animation with cargo planes following ancient routes updated for aviation on dark map
+FAILED: Tech hardware air freight animation with planes flowing from Asian factories to global markets
+FAILED: Fashion industry air routes animation with neon planes connecting design capitals on dark map
+FAILED: Fresh produce air freight paths with fast-moving aircraft connecting farm regions to markets
+FAILED: Pharmaceutical air freight routes with urgent glowing planes connecting labs to hospitals on dark map
+
+# Batch 58 – Real-Time Flight Traffic Styles
+FAILED: Rush hour air traffic animation with dense streams of neon aircraft crossing dark world map
+FAILED: Peak travel day animation with hundreds of tiny glowing plane dots filling dark world map
+FAILED: Air traffic control style animation with aircraft blips and route vectors on dark radar map
+FAILED: Time-accelerated flight traffic animation showing day of global aviation on dark world map
+FAILED: Busy airport approach animation with multiple aircraft lining up on glowing runway approach paths
+
+# Batch 59 – Regional Aviation Networks
+FAILED: European short-haul network animation with neon planes connecting capital cities on dark map
+FAILED: Southeast Asian aviation boom animation with aircraft multiplying across dark regional map
+FAILED: North American domestic route network with glowing planes crisscrossing dark continental map
+FAILED: Middle East aviation hub animation with aircraft radiating from Dubai and Doha on dark map
+FAILED: African aviation connectivity animation with flight paths linking major cities on dark continent map
+
+# Batch 60 – Cinematic Flight Path Finishes
+FAILED: Cinematic globe rotation with glowing flight arc drawing slowly across dark Earth surface
+FAILED: Dramatic flight reveal animation where single neon plane traces iconic route on dark world map
+FAILED: Premium airline brand animation with gold aircraft following elegant curved arc on dark map
+FAILED: Aerial perspective flight path animation looking down at glowing contrail across dark ocean
+FAILED: Final destination reveal animation where flight arc completes and city marker blooms on dark map
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Theme: Heatmap Flows — Color Gradients Spreading Across Regions, Market Density and Risk
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Batch 61 – Classic Heatmap Spreads
+FAILED: Red to yellow heat gradient slowly blooming outward from dense population centers on dark world map
+FAILED: Cool blue to hot orange heatmap flow spreading across dark continental map from activity origins
+FAILED: Neon intensity gradient washing across dark world map showing concentration zones brightening
+FAILED: Electric purple to cyan density heatmap animating across dark regional map in slow wave
+FAILED: Dark map surface slowly igniting with warm amber heatmap glow spreading from urban centers
+
+# Batch 62 – Market Density Heatmaps
+FAILED: Consumer market density heatmap with warm colors intensifying over high-spend regions on dark map
+FAILED: Retail foot traffic heatmap animation with orange glow spreading from shopping districts on dark map
+FAILED: E-commerce activity heatmap with cyan intensity gradient washing across dark world map by region
+FAILED: Customer concentration heatmap spreading from major metro areas outward on dark national map
+FAILED: Gold market saturation heatmap flowing across dark map showing high and low opportunity zones
+
+# Batch 63 – Financial Risk Analysis Maps
+FAILED: Risk exposure heatmap animation with red intensity spreading from volatile markets on dark world map
+FAILED: Credit risk gradient map with warm danger colors flowing from high-risk zones on dark regional map
+FAILED: Market volatility heatmap with pulsing orange-red glow intensifying over unstable regions on dark map
+FAILED: Geopolitical risk heatmap animation with dark amber spreading from conflict zones on dark world map
+FAILED: Insurance risk density map with color gradient flowing from high-claim regions on dark national map
+
+# Batch 64 – Sales and Revenue Density
+FAILED: Revenue density heatmap with gold intensity spreading from top-performing sales zones on dark map
+FAILED: Sales activity heatmap animation with warm colors radiating from high-conversion cities on dark map
+FAILED: Lead generation density heatmap glowing brighter over high-prospect regions on dark national map
+FAILED: Customer lifetime value heatmap with premium gold tones intensifying over loyal market zones on dark map
+FAILED: Profit margin heatmap animation with green intensity gradient spreading across territory map on dark background
+
+# Batch 65 – Population and Urban Density
+FAILED: World population density heatmap animation with warm glow intensifying over megacity clusters on dark map
+FAILED: Urban sprawl heatmap spreading outward from city centers over time on dark regional map
+FAILED: Nighttime light intensity heatmap animation showing civilization density on dark world map
+FAILED: Migration flow heatmap with directional color gradients washing across dark continental map
+FAILED: Housing demand density heatmap with orange intensity spreading from growth corridors on dark map
+
+# Batch 66 – Environmental and Climate Heatmaps
+FAILED: Temperature anomaly heatmap animation with red intensity spreading over warming regions on dark world map
+FAILED: Drought risk heatmap with amber to deep red gradient spreading across dark continental map
+FAILED: Flood risk density animation with cool blue intensity deepening over vulnerable zones on dark map
+FAILED: Air quality heatmap with purple smog gradient spreading from industrial centers on dark regional map
+FAILED: Carbon emission density heatmap animation with dark red intensity over high-output zones on dark world map
+
+# Batch 67 – Healthcare and Epidemiology Maps
+FAILED: Disease outbreak heatmap animation with red spread flowing outward from origin points on dark world map
+FAILED: Healthcare access density map with cool blue gradient fading in remote low-coverage regions on dark map
+FAILED: Hospital capacity heatmap with warm intensity showing strain spreading across dark regional map
+FAILED: Vaccination coverage heatmap animation with green density spreading across dark world map over time
+FAILED: Chronic disease risk heatmap with gradient flowing from high-incidence zones on dark national map
+
+# Batch 68 – Digital and Cyber Activity Heatmaps
+FAILED: Internet usage density heatmap with cyan glow intensifying over connected regions on dark world map
+FAILED: Cybersecurity threat heatmap with neon red intensity spreading from attack origin zones on dark map
+FAILED: Social media activity density heatmap animation with electric blue spreading across dark world map
+FAILED: Mobile data consumption heatmap with gradient flowing from high-bandwidth cities on dark regional map
+FAILED: Digital commerce density animation with gold heatmap intensifying over e-commerce hubs on dark map
+
+# Batch 69 – Real Estate and Infrastructure Density
+FAILED: Property value heatmap animation with gold intensity spreading from premium districts on dark city map
+FAILED: Construction activity density heatmap with warm amber glow over development zones on dark regional map
+FAILED: Infrastructure investment heatmap spreading from capital cities across dark continental map
+FAILED: Commercial real estate density animation with neon blue intensity over business districts on dark map
+FAILED: Logistics infrastructure density heatmap glowing over transport corridor zones on dark world map
+
+# Batch 70 – Cinematic Heatmap Finishes
+FAILED: Dramatic heatmap ignition animation where dark world map slowly catches fire with intensity glow
+FAILED: Luxury risk analysis heatmap with deep burgundy and gold gradient sweeping dark world map surface
+FAILED: Cinematic pull-back from single hot zone revealing full global heatmap on dark world map
+FAILED: Premium corporate heatmap reveal with elegant gradient washing across dark continental map
+FAILED: Final heatmap convergence animation where all intensity zones peak simultaneously on dark world map
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Theme: Connection Webs — Animated Hubs and Nodes for Partnerships, Networking and Mergers
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Batch 71 – Core Hub and Node Animations
+FAILED: Glowing central hub node with electric blue connection lines radiating outward to partner nodes on dark background
+FAILED: Neon cyan network web with pulsing nodes and animated connection lines forming on pure black background
+FAILED: Corporate partnership web animation with gold hub nodes and thin elegant connection lines on dark background
+FAILED: Organic network growth animation with nodes appearing and linking together across dark background
+FAILED: Electric white hub and spoke web with breathing node pulses and flowing connection line energy on dark background
+
+# Batch 72 – Business Partnership Visualizations
+FAILED: Two glowing corporate nodes merging with shared connection web forming between them on dark background
+FAILED: Strategic alliance animation with partner company nodes orbiting central hub with glowing tether lines
+FAILED: Joint venture web animation with two hub nodes bridged by thick neon connection and shared sub-nodes
+FAILED: Ecosystem partnership network with tiered node clusters connecting to central platform hub on dark background
+FAILED: Supplier and buyer partnership web with color-coded node types linked by directional flow lines on dark background
+
+# Batch 73 – Merger and Acquisition Animations
+FAILED: Two separate node networks slowly drifting together and merging into unified web on dark background
+FAILED: Corporate acquisition animation with small node cluster being absorbed into large hub network on dark background
+FAILED: Merger visualization with two equal hub nodes converging and forming single larger glowing node on dark background
+FAILED: Post-merger integration web animation with separate networks gradually connecting into one on dark background
+FAILED: Hostile takeover animation with dominant node extending connection tendrils to absorb distant nodes on dark background
+
+# Batch 74 – Social and Professional Networks
+FAILED: LinkedIn-style professional network web with glowing profile nodes and connection lines on dark background
+FAILED: Influence network animation with high-degree hub nodes glowing brighter by connection count on dark background
+FAILED: Referral network web spreading outward organically from single origin node on dark background
+FAILED: Community cluster network with tight node groups bridged by inter-community connection lines on dark background
+FAILED: Viral growth network animation with exponentially multiplying nodes and connections on dark background
+
+# Batch 75 – Technology and Platform Ecosystems
+FAILED: API integration web animation with platform hub node and app partner nodes connecting in sequence on dark background
+FAILED: Cloud platform ecosystem with service nodes orbiting central cloud hub with data flow lines on dark background
+FAILED: Developer ecosystem network with neon nodes representing tools libraries and frameworks on dark background
+FAILED: SaaS integration web animation with product nodes linking to central platform hub on dark background
+FAILED: Blockchain node network animation with peer-to-peer connection web forming across dark background
+
+# Batch 76 – Financial and Investment Networks
+FAILED: Venture capital portfolio network with investor hub connected to startup nodes on dark background
+FAILED: Banking correspondent network animation with financial institution nodes linked globally on dark background
+FAILED: Private equity deal web animation with fund node connecting to portfolio company nodes on dark background
+FAILED: Syndicated loan network with lead bank hub and participating lender nodes on dark background
+FAILED: Interbank connection web animation with central bank node and commercial bank sub-nodes on dark background
+
+# Batch 77 – Supply and Value Chain Webs
+FAILED: Supplier network web animation with manufacturer hub connected to tier one and tier two suppliers on dark background
+FAILED: Value chain connection web with nodes representing each stage from raw material to end consumer on dark background
+FAILED: Vendor ecosystem animation with procurement hub linking to approved supplier nodes on dark background
+FAILED: Franchise network web with franchisor hub node and franchisee nodes lighting up across dark background
+FAILED: Distribution network animation with central warehouse hub and regional depot nodes connected on dark background
+
+# Batch 78 – Premium and Abstract Node Styles
+FAILED: Crystal node network animation with faceted gem-like hubs and prismatic connection lines on dark background
+FAILED: Bioluminescent deep-sea style node web with organic glowing nodes and fluid connection tendrils on dark background
+FAILED: Magnetic node web animation with nodes attracting and repelling creating dynamic web on dark background
+FAILED: Particle burst node animation with each connection forming from streaming particles on dark background
+FAILED: Luxury gold filigree network web with ornate node designs and delicate connection lines on dark background
+
+# Batch 79 – Organizational and Corporate Structures
+FAILED: Corporate org chart animation with executive hub nodes and department sub-nodes connecting on dark background
+FAILED: Board of directors network with governance nodes linking to subsidiary company nodes on dark background
+FAILED: Global office network web with headquarters hub and regional office nodes pulsing on dark background
+FAILED: Cross-functional team network animation with department nodes bridged by project connection lines on dark background
+FAILED: Matrix organization web animation with dual reporting lines forming complex node network on dark background
+
+# Batch 80 – Cinematic Connection Web Finishes
+FAILED: Dramatic network convergence animation where scattered nodes fly together forming web on dark background
+FAILED: Cinematic slow build connection web where each new node link illuminates with bright flash on dark background
+FAILED: Premium reveal animation where dark background slowly reveals fully formed glowing node network
+FAILED: Explosive network growth animation where single node spawns entire web in rapid burst on dark background
+FAILED: Final connection web pulse animation where entire network breathes and glows in synchronized rhythm on dark background
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Theme: Timeline Evolutions — Maps Changing Over Time, Historical Business Progress
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Batch 81 – Corporate Growth Timelines
+FAILED: Company founding to global expansion timeline animation with city markers appearing year by year on dark map
+FAILED: Decade by decade office location growth animation with glowing dots populating dark world map over time
+FAILED: Corporate milestone timeline with glowing year markers and expanding territory zones on dark map
+FAILED: Brand evolution timeline animation showing market presence spreading continent by continent on dark map
+FAILED: Startup to enterprise growth timeline with node network expanding progressively on dark background
+
+# Batch 82 – Historical Trade and Commerce
+FAILED: Ancient to modern trade route evolution animation with routes transforming on dark world map over centuries
+FAILED: Silk Road to shipping lane to airline route timeline showing trade path evolution on dark map
+FAILED: Industrial revolution timeline animation with factory nodes lighting up across dark European map
+FAILED: Colonial trade network evolution animation with routes multiplying across dark world map over time
+FAILED: Modern globalization timeline showing supply chain complexity growing on dark world map decade by decade
+
+# Batch 83 – Technology Adoption Timelines
+FAILED: Internet adoption timeline animation with connectivity spreading across dark world map year by year
+FAILED: Mobile phone penetration timeline with glowing coverage zones expanding across dark global map
+FAILED: Smartphone revolution timeline showing adoption wave spreading from developed to emerging markets on dark map
+FAILED: Broadband infrastructure timeline animation with fiber optic routes multiplying on dark world map
+FAILED: Electric vehicle adoption timeline with charging network nodes multiplying across dark national map
+
+# Batch 84 – Market Expansion Timelines
+FAILED: Retail chain expansion timeline with store location dots populating dark national map year by year
+FAILED: Franchise growth timeline animation showing territory zones filling dark map over business history
+FAILED: E-commerce platform expansion timeline with market presence spreading across dark world map
+FAILED: Bank branch network growth timeline animation with location dots multiplying on dark regional map
+FAILED: Airline route network evolution timeline showing new routes appearing on dark world map over decades
+
+# Batch 85 – Geopolitical and Economic Timelines
+FAILED: Economic bloc formation timeline animation with country groups lighting up on dark world map over time
+FAILED: Free trade agreement timeline showing new partnerships connecting on dark world map year by year
+FAILED: Currency union expansion timeline with member nations illuminating on dark European map over time
+FAILED: Sanctions and trade restriction timeline animation with connection lines appearing and disappearing on dark map
+FAILED: Economic crisis and recovery timeline animation with market zones darkening then brightening on dark world map
+
+# Batch 86 – Infrastructure Development Timelines
+FAILED: Railway network construction timeline animation with track lines appearing on dark continental map over time
+FAILED: Highway system development timeline showing road network growing across dark national map decade by decade
+FAILED: Port development timeline animation with harbor nodes growing in size on dark coastline map over time
+FAILED: Pipeline infrastructure timeline with energy routes appearing progressively on dark regional map
+FAILED: Airport network expansion timeline animation with runways and terminals growing on dark national map
+
+# Batch 87 – Population and Urban Growth Timelines
+FAILED: City population growth timeline animation with urban zones expanding on dark regional map over decades
+FAILED: Urbanization wave timeline showing rural to urban migration on dark continental map over time
+FAILED: Megacity formation timeline animation with city marker sizes scaling to population on dark world map
+FAILED: Suburban sprawl timeline showing city boundaries expanding outward on dark national map over decades
+FAILED: Population migration timeline animation with flow arrows shifting direction on dark world map over time
+
+# Batch 88 – Brand and Industry Evolution Timelines
+FAILED: Fashion industry hub evolution timeline showing design capital importance shifting on dark world map
+FAILED: Automotive manufacturing timeline showing factory locations evolving on dark world map over decades
+FAILED: Financial capital evolution timeline animation showing city importance rising and falling on dark map
+FAILED: Tech industry geography timeline showing Silicon Valley to global tech hub spread on dark world map
+FAILED: Media and entertainment industry timeline showing Hollywood to streaming global spread on dark map
+
+# Batch 89 – Environmental and Climate Timelines
+FAILED: Deforestation timeline animation showing forest coverage shrinking on dark regional map over decades
+FAILED: Glacier retreat timeline animation with ice coverage receding on dark polar map over time
+FAILED: Renewable energy adoption timeline with solar and wind farm nodes multiplying on dark world map
+FAILED: Ocean plastic accumulation timeline animation with density zones growing on dark ocean map
+FAILED: Urban heat island growth timeline showing temperature zones expanding on dark city map over time
+
+# Batch 90 – Cinematic Timeline Evolution Finishes
+FAILED: Epic timeline sweep animation showing full century of business evolution on dark world map in sequence
+FAILED: Dramatic fast-forward timeline animation where decades of change compress into seconds on dark map
+FAILED: Premium corporate history timeline with gold year markers and glowing milestone events on dark map
+FAILED: Cinematic rewind and replay timeline animation showing business journey from start to present on dark map
+FAILED: Final evolution reveal where dark map transforms to show fully developed modern network in one sweep
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Theme: Icon Swarms — Icons Clustering and Moving by Data, Demographic and Customer Mapping
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Batch 91 – People and Population Icon Swarms
+FAILED: Thousands of tiny glowing person icons clustering into dense population zones on dark world map
+FAILED: Human figure icons swarming and self-organizing into city shapes on dark background by density data
+FAILED: Neon people icons migrating in streams from rural zones to urban clusters on dark continental map
+FAILED: Color-coded demographic icon swarms separating into age groups across dark regional map
+FAILED: Person icons multiplying and spreading outward from population growth hotspots on dark world map
+
+# Batch 92 – Customer and Consumer Swarms
+FAILED: Glowing customer icons flowing toward retail hub locations and clustering on dark city map
+FAILED: Shopper icons swarming from residential zones toward commercial districts on dark urban map
+FAILED: Neon consumer icons grouping by purchase behavior into color-coded clusters on dark background
+FAILED: Customer lifetime value swarm animation with gold icons separating from silver and bronze on dark map
+FAILED: Brand loyal customer icons clustering tightly around product hub while others drift away on dark background
+
+# Batch 93 – Demographic Segmentation Animations
+FAILED: Age demographic icon swarm animation with icons color-coded by generation grouping on dark map
+FAILED: Income bracket icon swarm with gold silver and bronze figures clustering by wealth zone on dark background
+FAILED: Gender demographic swarm animation with two-color icon populations distributing across dark regional map
+FAILED: Education level icon swarm clustering into knowledge economy hubs on dark national map
+FAILED: Family size demographic icons grouping into suburban and urban clusters on dark city map
+
+# Batch 94 – Workforce and Employment Swarms
+FAILED: Worker icons flowing from residential zones to employment hub clusters on dark city grid map
+FAILED: Skilled labor migration swarm animation with professional icons moving toward tech hub cities on dark map
+FAILED: Remote worker icon dispersion animation with figures scattering outward from city centers on dark map
+FAILED: Industry workforce swarm with color-coded occupation icons clustering by sector zone on dark map
+FAILED: Unemployment to employment transition swarm with icons shifting from red to green on dark regional map
+
+# Batch 95 – Voter and Political Mapping Swarms
+FAILED: Voter preference icon swarm animation with color-coded figures clustering into political zones on dark map
+FAILED: Electoral constituency swarm with icons self-organizing into district boundaries on dark national map
+FAILED: Swing voter icons oscillating between two color zones on dark political map in animated swarm
+FAILED: Turnout rate swarm animation with active voter icons brightening and dim abstainer icons on dark map
+FAILED: Political realignment swarm showing icon color shifts across regions over time on dark map
+
+# Batch 96 – Social Media and Digital Audience Swarms
+FAILED: Social media follower icons swarming toward influencer hub nodes on dark background
+FAILED: Viral content spread animation with share icons multiplying outward in exponential swarm on dark background
+FAILED: Platform user icons migrating between competing social network hubs on dark background
+FAILED: Engagement icon swarm with heart and comment icons clustering around high-performing content nodes
+FAILED: Subscriber icon swarm animation with figures flowing toward channel nodes on dark background
+
+# Batch 97 – Healthcare and Patient Mapping Swarms
+FAILED: Patient icon swarms flowing toward hospital and clinic nodes across dark regional map
+FAILED: Healthcare worker icons distributing across dark map showing coverage density by location
+FAILED: Disease prevalence swarm animation with affected icons clustering in high-risk zones on dark map
+FAILED: Vaccination uptake swarm with immunized icons turning from red to green across dark national map
+FAILED: Specialist doctor icon swarm clustering in urban centers leaving rural zones sparse on dark map
+
+# Batch 98 – Market Research and Survey Swarms
+FAILED: Survey respondent icons self-organizing into opinion clusters on dark background by response data
+FAILED: Net promoter score swarm animation with promoter detractor and passive icons separating on dark background
+FAILED: Focus group icon swarm clustering around product preference nodes on dark background
+FAILED: Brand awareness icon swarm animation with aware and unaware figures distributing on dark map
+FAILED: Customer satisfaction swarm with icons migrating from dissatisfied to satisfied zones on dark background
+
+# Batch 99 – Abstract and Premium Icon Swarm Styles
+FAILED: Geometric shape icons swarming and morphing into world map silhouette on dark background
+FAILED: Particle-style micro icons forming human crowd shapes that cluster and disperse on dark background
+FAILED: Luxury gold person icons flowing in elegant streams toward premium destination nodes on dark background
+FAILED: Bioluminescent icon swarm animation with glowing organic figures clustering in fluid motion on dark background
+FAILED: Minimalist single-color icon swarm forming data-driven patterns across pure black background
+
+# Batch 100 – Cinematic Icon Swarm Finishes
+FAILED: Epic icon swarm convergence animation where thousands of figures fly together into globe shape on dark background
+FAILED: Dramatic reveal where chaotic icon swarm suddenly self-organizes into recognizable map pattern on dark background
+FAILED: Cinematic zoom into icon swarm cluster revealing individual glowing figures on dark background
+FAILED: Premium corporate icon swarm with gold figures arranging into company logo shape on dark background
+FAILED: Final icon swarm pulse where entire population of figures breathes in synchronized wave on dark background

@@ -3,7 +3,10 @@
     "allow": [
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:www.remotion.dev)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(mkdir:*)",
+      "Skill(remotion-video-creator)",
+      "Skill(remotion-video-creator:*)"
     ]
   }
 }
